@@ -1,0 +1,90 @@
+.tomato-image {
+  display: block;
+  max-width: 100px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+@media (max-height: 400px) {
+  .tomato-image {
+    display: none;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.timer-container {
+  text-align: center;
+}
+
+.timer-display {
+  font-size: 64px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.date-display:hover {
+  opacity: 0.6;
+  transition-delay: 0s;
+}
+
+.progress-bar-container {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #ddd;
+  padding: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: green;
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.timer-input {
+  width: 60%;
+  font-size: 16px;
+}
+
+@media (max-height: 400px) {
+  .timer-input {
+    display: none;
+  }
+}
+
+.set-btn {
+  padding: 0px 0px;
+}
+
+@media (max-height: 400px) {
+  .set-btn {
+    display: none;
+  }
+}
+
+.date-display {
+  font-size: 15px;
+  opacity: 0.2;
+  transition: opacity 1s 2s;
+  position: fixed;
+  bottom: 5px;
+}
+
+@media (max-height: 400px) {
+  .date-display {
+    display: none;
+  }
+}

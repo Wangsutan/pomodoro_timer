@@ -1,9 +1,17 @@
-use tauri::LogicalSize;
-
 #[tauri::command]
-fn resize_window(window: tauri::Window, width: u32, height: u32) {
-    let size = LogicalSize::new(width, height);
-    window.set_size(size).unwrap();
+fn resize_window(window: tauri::Window, width: u32, height: u32) -> () {
+    // 仅在桌面平台调整窗口大小
+    #[cfg(desktop)]
+    {
+        use tauri::LogicalSize;
+        let size = LogicalSize::new(width, height);
+        window.set_size(size).unwrap();
+    }
+    // 移动端可忽略或替换为其他逻辑
+    #[cfg(mobile)]
+    {
+        println!("Resize not supported on mobile");
+    }
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]

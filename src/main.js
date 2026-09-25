@@ -1,5 +1,11 @@
 const { invoke } = window.__TAURI__.core;
 
+// 如果是移动端，隐藏 Size 按钮
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+if (isMobile) {
+  document.getElementById("toggle-size-btn").style.display = "none";
+}
+
 // 切换既定的窗口尺寸
 const size1 = { width: 300, height: 500 };
 const size2 = { width: 300, height: 170 };
